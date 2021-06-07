@@ -1,1 +1,80 @@
+name: Build GSI
+
+on:
+  watch:
+    types: [started]
+    
+env:
+  ROM_URL: https://api.aospextended.com/download/lavender/r/51ec33e251453d4b1ba96969b5ef7727a76a646aa1d81e3c2669695030f65c501d52f6ec53d8ac7fb1ee2c0643365a43a352df38f0
+  ROM_NAME: Generic
+  BUILD_AB: true
+  BUILD_Aonly: false
+  ROM_AONLY: A.zip
+  ROM_AB: Bootleggers_5.8_arm64_bvn.zip
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+
+    steps:
+       - name: Kiểm tra
+         uses: actions/checkout@master
+       
+       - name: Dọn dẹp
+         run: |
+           docker rmi `docker images -q`
+           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
+           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
+           sudo -E apt-get update
+           sudo -E apt-get -y autoremove --purge
+           sudo -E apt-get clean 
+           
+       - name: Thiết lập môi trường
+         run: |
+            sudo -E apt-get -qq update
+            sudo -E apt-get -qq install git openjdk-8-jdk p7zip
+       
+       - name: Lấy nguồn
+         run: git clone --recurse-submodules https://github.com/ping2109/ErfanGSIs-TrebleExp.git ErfanGSIs
+       
+       - name: Thiết lập các yêu cầu
+         run: |
+              sudo chmod -R 777 ErfanGSIs
+              cd ErfanGSIs
+              sudo bash setup.sh
+       
+       - name: Tải rom và build Arm64 A Only GSI
+         if: env.BUILD_AONLY == 'true'
+         run: sudo ./ErfanGSIs/url2GSI.sh -a $ROM_URL $ROM_NAME -d
+       
+       - name: Nén Zip Arm64 A Only GSI
+         if: env.BUILD_AONLY == 'true'
+         run: 7za a -tzip -r $ROM_AONLY ErfanGSIs/output/*
+       
+       - name: Up GSI lên GoFile
+         if: env.BUILD_AONLY == 'true'
+         run: |
+              curl -sL https://git.io/file-transfer | sh
+              ./transfer gof $ROM_AONLY
+           
+       - name: Dọn dẹp đầu ra
+         if: env.BUILD_AB == 'true'
+         run: sudo rm -rf ErfanGSIs/output/*
+         
+       - name: Tải rom và build Arm64 AB GSI
+         if: env.BUILD_AB == 'true'
+         run: sudo ./ErfanGSIs/url2GSI.sh -b $ROM_URL $ROM_NAME -d
+
+       - name: Nén Zip Arm64 AB GSI
+         if: env.BUILD_AB == 'true'
+         run: 7za a -tzip -r $ROM_AB ErfanGSIs/output/*
+
+       - name: Up GSI lên GoFile 
+         if: env.BUILD_AB == 'true'
+         run: |
+              curl -sL https://git.io/file-transfer | sh
+              ./transfer gof $ROM_AB
+              
+           
 
