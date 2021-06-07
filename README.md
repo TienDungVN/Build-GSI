@@ -12,7 +12,7 @@
 4. Star và xem ở Action
 5. Download link sẽ có ở phần Up GSI lên GoFile
 
-- Note: Để build lại GSI, đổi link và bấm unstar rồi bấm star
+- Note: Nếu muốn build lại GSI hoặc build GSI khác, bạn cần đổi link, bấm unstar rồi bấm star
 
 ### Thông tin:
 ROM_LINK: Link tải GSI
