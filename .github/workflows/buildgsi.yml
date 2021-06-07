@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://api.aospextended.com/download/lavender/r/51ec33e251453d4b1ba96969b5ef7727a76a646aa1d81e3c2669695030f65c501d52f6ec53d8ac7fb1ee2c0643365a43a352df38f0
+  ROM_URL: https://devices.project404.co/0:/rolex/project-404-4.3-20210530-000442-RIPPA-rolex.zip
   ROM_NAME: Generic
   BUILD_AB: true
   BUILD_Aonly: false
   ROM_AONLY: A.zip
-  ROM_AB: AEX_8.2_R_arm64_bvn.zip
+  ROM_AB: Project_404_4.3_Arm64_AB_GSI.zip
 
 jobs:
   build:
