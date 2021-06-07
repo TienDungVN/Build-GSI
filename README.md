@@ -48,6 +48,8 @@ ROM_AB: Generic_Arm64_AB.zip
 
 ## Credit:
 - Nguồn tool: toan704
-- Group hỗ trợ: https://t.me/androidgsivn
 - Nâng cấp và chỉnh sửa tool: ping2019
 - Chỉnh sửa tool (2): TienDungVN
+
+### Group hỗ trợ
+Telegram: https://t.me/dunggvngroup
