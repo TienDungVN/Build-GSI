@@ -3,7 +3,7 @@
 - Phải là ROM.zip
 - ROM phải hỗ trợ treble
 - Đừng thử OneUI
-- Download link phải là one click link (link bấm vào là down file luôn)
+- Download link phải là direct link (link bấm vào là down file)
 
 ### Hướng dẫn:
 1. Fork
@@ -34,7 +34,7 @@ ROM_AONLY: Tên file Rom A Only, bạn có thể đổi thành bất cứ thứ 
 
 ### Ví dụ:
 
-ROM_LINK: #link rom
+ROM_LINK: #direct link
 
 ROM_TYPE: Generic
 
@@ -42,9 +42,9 @@ BUILD_AB: true
 
 BUILD_AONLY: false
 
-ROM_AONLY: Generic_A_Only.zip
+ROM_AONLY: Generic_Arm64_A_Only.zip
 
-ROM_AB: Generic_AB.zip
+ROM_AB: Generic_Arm64_AB.zip
 
 ### Credit:
 - Nguồn tool: toan704
