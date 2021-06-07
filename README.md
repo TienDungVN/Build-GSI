@@ -1,11 +1,11 @@
 # GSI Builder
-### Yêu cầu:
+## Yêu cầu:
 - Phải là ROM.zip
 - ROM phải hỗ trợ treble
 - Đừng thử OneUI
 - Download link phải là direct link (link bấm vào là down file)
 
-### Hướng dẫn:
+## Hướng dẫn:
 1. Fork
 2. Bấm vào tập tin workflow và sửa builder.yml
 3. Sửa ROM's link
@@ -14,7 +14,7 @@
 
 - Note: Nếu muốn build lại GSI hoặc build GSI khác, bạn cần đổi link, bấm unstar rồi bấm star
 
-### Thông tin:
+## Thông tin:
 ROM_LINK: Link tải GSI
 
 ROM_TYPE: Loại GSI, ví dụ:
@@ -32,7 +32,7 @@ ROM_AB: Tên file Rom AB, bạn có thể đổi thành bất cứ thứ gì nh�
 
 ROM_AONLY: Tên file Rom A Only, bạn có thể đổi thành bất cứ thứ gì nhưng phải giữ .zip
 
-### Ví dụ:
+## Ví dụ:
 
 ROM_LINK: #direct link
 
@@ -46,7 +46,7 @@ ROM_AONLY: Generic_Arm64_A_Only.zip
 
 ROM_AB: Generic_Arm64_AB.zip
 
-### Credit:
+## Credit:
 - Nguồn tool: toan704
 - Group hỗ trợ: https://t.me/androidgsivn
 - Nâng cấp và chỉnh sửa tool: ping2019
