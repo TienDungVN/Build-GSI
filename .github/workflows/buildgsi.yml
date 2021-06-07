@@ -10,7 +10,7 @@ env:
   BUILD_AB: true
   BUILD_Aonly: false
   ROM_AONLY: A.zip
-  ROM_AB: Bootleggers_5.8_arm64_bvn.zip
+  ROM_AB: AEX_8.2_R_arm64_bvn.zip
 
 jobs:
   build:
