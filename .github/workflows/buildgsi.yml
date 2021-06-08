@@ -5,12 +5,12 @@ on:
     types: [started]
     
 env:
-  ROM_URL: Direct Link
+  ROM_URL: https://api.aospextended.com/download/lavender/r/51ec33e251453d4b1ba96969b5ef7727a76a646aa1d81e3c2669695030f65c501d52f6ec53d8ac7fb1ee2c0643365a43a352df38f0
   ROM_NAME: Generic
   BUILD_AB: true
   BUILD_Aonly: false
   ROM_AONLY: Generic_Arm64_A_Only.zip
-  ROM_AB: Generic_Arm64_AB.zip
+  ROM_AB: AEX_8.2_R_Arm64_AB_GSI.zip
 
 jobs:
   build:
